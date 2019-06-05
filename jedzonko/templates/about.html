@@ -34,83 +34,36 @@
                     <a class="nav-link disabled" href="/recipe/list">Przepisy</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link" href="/recipe/add">Dodaj przepis</a>
-                <li class="nav-item ml-4">
                     <a class="nav-link disabled" href="/contact">Kontakt</a>
                 </li>
             </ul>
         </nav>
     </header>
+ 
+<body>
+ 
+<h1>Witamy w naszej w aplikacji!</h1>
+<p>Mamy nadzieję, że znajdziesz tutaj najlepsze i najsmaczniejsze przepisy w sieci</p><br> 
+<p>Nasi specjaliści przygotowali zbilansowane dietetyczne oraz smaczne posiłki. W naszej aplikacji znajdziesz przepisy dla:</p>
+<ul>
+<li> Alergików</li> 
+<li>Nietolerujących glutenu</li> 
+<li>Dzieci</li> 
+<li>Osób starszych</li> 
+<li>Trenujących</li> 
+<li>Wegan</li> 
+ 
+<h2>Ważne informacje</h2>
+<p>Maria Iksińska napisała książkę kucharską, która stała się bestsellerem na rynku książek kucharskich w Polsce.</p><br>
+<p>Książka Pani Iksińskiej promuje zdrowe odżywianie i podkreśla jak ważną rolę odgrywa w nim planowanie posiłków.</p><br> 
+<p>Chce zacząć przeprowadzać w całym kraju warsztaty, na których będzie uczyć uczestników planowania posiłków.</p><br>
 
-    <section>
-        <div class="row padding-small">
-            <i class="fas fa-users icon-users"></i>
-            <h1>Przepisy naszych użytkowników:</h1>
-            <hr>
-            <div class="orange-line w-100"></div>
-        </div>
-    </section>
-
-    <section class="mr-4 ml-4">
-    <table class="table">
-            <thead>
-              <tr class="d-flex text-color-darker">
-                <th scope="col" class="col-1">ID</th>
-                <th scope="col" class="col-4">NAZWA</th>
-                <th scope="col" class="col-1">GŁOSY</th>
-                <th scope="col" class="col-5">OPIS</th>
-                <th scope="col" class="col-1">AKCJE</th>
-              </tr>
-            </thead>
-            <tbody class="text-color-lighter">
-              {% for recipe in recipes %}
-              <tr class="d-flex">
-                <th scope="row" class="col-1"> {{ recipe.pk }}</th>
-                <td scope="row" class="col-4"> {{ recipe.name }} </td>
-                <td scope="row" class="col-1"> {{ recipe.votes }} </td>
-                <td scope="row" class="col-5"> {{ recipe.description }} </td>
-                <td scope="row" class="col-1"><a href="/recipe/{{ recipe.id }}/" class="btn btn-info rounded-0 text-light">Szczegóły</button></td>
-              </tr>
-              {% endfor %}
-            </tbody>
-        </table>
-
-        <div class="pagination">
-          <span class="step-links">
-            {% if recipes.has_previous %}
-                <a href="?page={{ recipes.previous_page_number }}">Poprzednia</a>
-            {% endif %}
-
-          <span class="current">
-            {% for page in recipes.paginator.page_range %}
-              {% if forloop.counter != 1 %} | {% endif %}
-                {{ page }}
-            {% endfor %}
-          </span>
-            {% if recipes.has_next %}
-                <a href="?page={{ recipes.next_page_number }}">Następna</a>
-            {% endif %}
-          </span>
-        </div>
-
-    </section>
-
-    <section class="last-info-section padding-small">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h3 class="mb-4">Lorem ipsum dolor</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna.</p>
-                    </div>
-                    <div class="col pl-4 ml-4">
-                        <h3 class="mb-4">Lorem ipsum dolor</h3>
-                        <ul class="container">
-                            <li>consectetur adipiscing elit</li>
-                            <li>sed do eiusmod tempor</li>
-                            <li>incididunt ut labore</li>
-                            <li>et dolore magna aliqua</li>
-                        </ul>
-                    </div>
+<p><i>7 maja 2019</i> - Data założenia strony</p>
+ 
+<h2>Przydatne linki</h2>
+<p>Blog Mari Iksińskiej (zarchiwizowany 30 kwietnia 2019): <a href="http://www.iksinska.pl">https://www.iksinska.pl</a></p>
+ 
+</body>
                     <div class="col">
                         <h3 class="mb-4">Lorem ipsum dolor</h3>
                         <div class="input-group mb-3">
@@ -118,16 +71,16 @@
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="input-group-text btn-color border-0 rounded-0" type="submit" id="basic-addon2"><a
-                                        href="/main">Strona Główna</a></button>
+                                        href="/">Strona Główna</a></button>
                             </div>
                         </div>
                         <div class="container d-flex-row">
                             <a href="#">
                                 <i class="fab fa-facebook-square mr-4 icon-social"></i>
-                            </a>
+                            </a> 
                             <a href="#">
                                 <i class="fab fa-twitter-square mr-4 icon-social"></i>
-
+                                
                             </a>
                             <a href="#">
                                 <i class="fab fa-instagram icon-social"></i>

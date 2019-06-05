@@ -7,12 +7,21 @@
             <h3 class="color-header text-uppercase">DODAJ PRZEPIS DO PLANU</h3>
         </div>
         <div class="col d-flex justify-content-end mb-2 noPadding">
-            <a href="#" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</a>
+            <form action="/plan/add/details/" method="POST">
+                <input type="submit" name="sumbit" value="Zapisz" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">
+                {% csrf_token %}
         </div>
     </div>
 
+              <li class="nav-item ml-4">
+                    <a class="nav-link" href="/about">O aplikacji</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <a class="nav-link disabled" href="/contact">Kontakt</a>
+                </li>
+
     <div class="schedules-content">
-        <form>
+            <input type="hidden" name="plan_id" value="{{ plan_id }}">
             <div class="form-group row">
                 <label for="choosePlan"
                        class="col-sm-2 label-size col-form-label">
@@ -20,11 +29,9 @@
                 </label>
                 <div class="col-sm-3">
                     <select class="form-control" id="choosePlan">
-                        <option>Mój pierwszy plan</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        {%for plan in plan_name %}
+                        <option value="{{ plan.name }}">{{ plan.name }}</option>
+                        {%  endfor %}
                     </select>
                 </div>
             </div>
@@ -42,21 +49,19 @@
                     Numer posiłku
                 </label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" value="" id="number"
-                           placeholder="Numer posiłki">
+                    <input type="number" class="form-control" value="" id="number"
+                           placeholder="Numer posiłku" min="1">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="recipie" class="col-sm-2 label-size col-form-label">
+                <label for="recipe" class="col-sm-2 label-size col-form-label">
                     Przepis
                 </label>
                 <div class="col-sm-4">
-                    <select class="form-control" id="recipie">
-                        <option>Zapiekanka z ziemniakami i brukselką</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <select class="form-control" id="recipe">
+                        {%  for recipe_name in recipe_name %}
+                        <option value="{{ recipe_name.name }}">{{  recipe_name.name }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
@@ -66,15 +71,13 @@
                 </label>
                 <div class="col-sm-2">
                     <select class="form-control" id="day">
-                        <option>poniedziałek</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        {% for day in day_name %}
+                        <option value="{{ day.name }}">{{ day.name }}</option>
+                        {%  endfor %}
                     </select>
                 </div>
             </div>
-        </form>
+        </form> 
     </div>
 </div>
 {% endblock content %}

@@ -1,25 +1,32 @@
 {% extends "__base__.html" %}
 {% block content %}
 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-
+  <form method="post">
     <div class="row border-bottom border-3 p-1 m-1">
         <div class="col noPadding">
             <h3 class="color-header text-uppercase">NOWY PLAN</h3>
+            <h2>{{ null_field }}</h2>
         </div>
         <div class="col d-flex justify-content-end mb-2 noPadding">
-            <a href="" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</a>
+          <button type="submit" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
         </div>
     </div>
+    <li class="nav-item ml-4">
+                    <a class="nav-link" href="/about">O aplikacji</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <a class="nav-link disabled" href="/contact">Kontakt</a>
+                </li>
 
     <div class="schedules-content">
-        <form>
+
             <div class="form-group row">
                 <label for="planName"
                        class="col-sm-2 label-size col-form-label">
                     Nazwa planu
                 </label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="planName"
+                    <input type="text" class="form-control" name ="planName" id="planName"
                            placeholder="Nazwa planu">
                 </div>
             </div>
@@ -29,13 +36,11 @@
                     Opis planu
                 </label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="5" id="planDescription"
+                    <textarea class="form-control" name ="planDescription" rows="5" id="planDescription"
                               placeholder="Opis plany"></textarea>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
+
 {% endblock content %}
 
 {% block title %}{% endblock %}
