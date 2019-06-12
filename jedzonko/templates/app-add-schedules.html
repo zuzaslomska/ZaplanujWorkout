@@ -1,23 +1,14 @@
 {% extends "__base__.html" %}
 {% block content %}
 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-  <form method="post">
     <div class="row border-bottom border-3 p-1 m-1">
         <div class="col noPadding">
             <h3 class="color-header text-uppercase">NOWY PLAN</h3>
             <h2>{{ null_field }}</h2>
         </div>
-        <div class="col d-flex justify-content-end mb-2 noPadding">
-          <button type="submit" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
-        </div>
-    </div>
-    <li class="nav-item ml-4">
-                    <a class="nav-link" href="/about">O aplikacji</a>
-                </li>
-                <li class="nav-item ml-4">
-                    <a class="nav-link disabled" href="/contact">Kontakt</a>
-                </li>
+    <form method="post">
 
+    </div>
     <div class="schedules-content">
 
             <div class="form-group row">
@@ -40,7 +31,12 @@
                               placeholder="Opis plany"></textarea>
                 </div>
             </div>
+            <div class="col d-flex justify-content-end mb-2 noPadding">
 
+          <button type="submit" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
+        </div>
+    {% csrf_token %}
+    </form>
 {% endblock content %}
 
 {% block title %}{% endblock %}

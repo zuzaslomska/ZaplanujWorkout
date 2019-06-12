@@ -28,13 +28,17 @@
                     <a class="nav-link color-header" href="registration.html">rejestracja</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link" href="/about">O aplikacji</a>
+                    <a class="nav-link disabled" href="/recipe/list">Przepisy</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <a class="nav-link disabled" href="/plan/list">Plany</a>
                 </li>
                 <li class="nav-item ml-4">
                     <a class="nav-link disabled" href="/contact">Kontakt</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link disabled" href="recipe/list">Przepisy</a>
+                    <a class="nav-link" href="/about">O aplikacji</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,14 +46,7 @@
     <section class="padding-large bg-light">
         <div id="carouselExampleControls" class="carousel slide main-slider" data-ride="carousel">
             <div class="carousel-inner container">
-            <!--  <div class="carousel-item active">
-                    <div class="container w-75 d-flex">
-                      <div class="carousel-caption d-block">
-                            <h1> {{rec1.name}} </h1>
-                            <h3> {{rec1.description}} </h3>
-                      </div>
-                    </div>
-                </div> -->
+
                 {%for item in recipes%}
                 <!--{% if forloop.first %}active{% endif %} -->
                 <div class= "carousel-item {% if forloop.first %}active{% endif %}">

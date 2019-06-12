@@ -22,7 +22,6 @@ from jedzonko.views import IndexView, About, Contact, RecipesList,PlanList,\
 
 urlpatterns = [
     path('index/', IndexView.as_view()),
-
     path('about/', About.as_view()), 
     path('contact/', Contact.as_view()), 
     path('main/', IndexView.as_view()),

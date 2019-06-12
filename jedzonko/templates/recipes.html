@@ -28,15 +28,16 @@
                     <a class="nav-link color-header" href="registration.html">rejestracja</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link" href="/about">o aplikacji</a>
-                </li>
-                <li class="nav-item ml-4">
                     <a class="nav-link disabled" href="/recipe/list">Przepisy</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link" href="/recipe/add">Dodaj przepis</a>
+                    <a class="nav-link disabled" href="/plan/list">Plany</a>
+                </li>
                 <li class="nav-item ml-4">
                     <a class="nav-link disabled" href="/contact">Kontakt</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <a class="nav-link" href="/about">O aplikacji</a>
                 </li>
             </ul>
         </nav>
@@ -69,9 +70,10 @@
                 <td scope="row" class="col-4"> {{ recipe.name }} </td>
                 <td scope="row" class="col-1"> {{ recipe.votes }} </td>
                 <td scope="row" class="col-5"> {{ recipe.description }} </td>
-                <td scope="row" class="col-1"><a href="/recipe/{{ recipe.id }}/" class="btn btn-info rounded-0 text-light">Szczegóły</button></td>
+                <td scope="row" class="col-1"><a href="/recipe/{{ recipe.id }}/" class="btn btn-info rounded-0 text-light">Szczegóły</button>
               </tr>
               {% endfor %}
+               <a href="/recipe/add"><p class="btn btn-info rounded-0 text-light">dodaj przepis</p></a>
             </tbody>
         </table>
 

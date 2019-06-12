@@ -11,14 +11,6 @@
             <a href="" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Powrót</a>
         </div>
     </div>
-    
-    <li class="nav-item ml-4">
-                    <a class="nav-link" href="/about">O aplikacji</a>
-                </li>
-                <li class="nav-item ml-4">
-                    <a class="nav-link disabled" href="/contact">Kontakt</a>
-                </li>
-
     <div class="schedules-content">
         <div class="schedules-content-header">
             <div class="form-group row">
@@ -62,7 +54,9 @@
                 <td class="col-1 center"><a href="/recipe/{{meal.recipe.id}}/"
                                             class="btn btn-info rounded-0 text-light m-1">Szczegóły</a></td>
             </tr>
+            {% endfor %}
                 {% endfor %}
+                    {% endfor %}
             </tbody>
       </table>
 </div>
